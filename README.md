@@ -18,24 +18,34 @@ A Telegram bot that downloads videos and photos from YouTube, TikTok, Instagram,
 
 ## Prerequisites
 
-- [Rust](https://rustup.rs/) 1.75+
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) installed and on `PATH` (run `yt-dlp -U` to update)
-- [ffmpeg](https://ffmpeg.org/) installed and on `PATH`
-- [gallery-dl](https://github.com/mikf/gallery-dl) (optional) — fallback for TikTok/Instagram/Facebook when yt-dlp fails: `pip install gallery-dl`
+- [Rust](https://rustup.rs/) 1.75+ — install via `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) on `PATH` — `pip install yt-dlp` or download from releases
+- [ffmpeg](https://ffmpeg.org/) on `PATH` — `brew install ffmpeg` (macOS) or your package manager
+- [gallery-dl](https://github.com/mikf/gallery-dl) (optional) — fallback when yt-dlp fails: `pip install gallery-dl`
 - A Telegram bot token from [@BotFather](https://t.me/BotFather)
 
-## Quick Start
+## Installation & Run (after cloning)
 
 ```bash
-# Clone and enter
-git clone <repo-url> && cd tg-dl-bot
+# 1. Clone the repository
+git clone <repo-url> && cd TG-DL-video-BOT
 
-# Configure
+# 2. Install dependencies (Rust crates are built automatically)
+cargo build
+
+# 3. Configure environment
 cp .env.example .env
-# Edit .env and set TELOXIDE_TOKEN
+# Edit .env and set your TELOXIDE_TOKEN (get it from @BotFather)
 
-# Run
+# 4. Run the bot
 cargo run
+```
+
+To build an optimized release binary:
+
+```bash
+cargo build --release
+./target/release/tg-dl-bot
 ```
 
 ## Configuration
