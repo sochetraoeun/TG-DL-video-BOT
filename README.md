@@ -69,8 +69,6 @@ docker run -d --env-file .env --name tg-dl-bot tg-dl-bot
 
 ## Project Structure
 
-3
-
 ```
 src/
 ├── main.rs              # Entry point
